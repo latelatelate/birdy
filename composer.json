@@ -1,0 +1,23 @@
+{
+    "name": "nm/Birdy",
+    "description": "Laravel service provider for codebird-php",
+    "license": "MIT",
+    "keywords": ["codebird", "twitter", "laravel"],
+    "authors": [
+        {
+            "name": "Nick Mow",
+            "email": "nickmow@gmail.com"
+        }
+    ],
+    "require": {
+        "jublonet/codebird-php": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NM\\Birdy\\": "src"
+        }
+    }
+}
