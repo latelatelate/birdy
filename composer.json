@@ -1,5 +1,5 @@
 {
-    "name": "nm/Birdy",
+    "name": "nm/birdy",
     "description": "Laravel service provider for codebird-php",
     "license": "MIT",
     "keywords": ["codebird", "twitter", "laravel"],
