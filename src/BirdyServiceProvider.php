@@ -1,7 +1,7 @@
 <?php namespace NM\Birdy;
 
 use Illuminate\Support\ServiceProvider;
-use Codebird\Codebird;
+use \Codebird\Codebird;
 
 class BirdyServiceProvider extends ServiceProvider
 {
@@ -19,10 +19,9 @@ class BirdyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Codebird::class, function ($app) {
-            Codebird::setConsumerKey(config('birdy.CONSUMER_KEY'), config('birdy.CONSUMER_SECRET'));
-            Codebird::setBearerToken(config('birdy.ACCESS_TOKEN'));
-            return Codebird::getInstance();
+        $this->app->bind(\Codebird\Codebird::class, function ($app) {
+            \Codebird\Codebird::setConsumerKey(config('birdy.CONSUMER_KEY'), config('birdy.CONSUMER_SECRET'));
+            return \Codebird\Codebird::getInstance();
         });
     }
 
@@ -34,7 +33,7 @@ class BirdyServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'../config/config.php' => config_path('birdy.php'),
+            __DIR__.'/../config/config.php' => config_path('birdy.php'),
         ]);
     }
 
@@ -45,6 +44,6 @@ class BirdyServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [Codebird::class];
+        return [\Codebird\Codebird::class];
     }
 }

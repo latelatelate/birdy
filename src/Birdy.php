@@ -9,5 +9,5 @@ class Birdy extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'Codebird'; }
+    protected static function getFacadeAccessor() { return \Codebird\Codebird::class; }
 }
